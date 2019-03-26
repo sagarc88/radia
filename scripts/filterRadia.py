@@ -1453,7 +1453,7 @@ def main():
         previousFilename = extract_passing(i_id, i_chr, previousFilename, i_outputDir, i_prefix, i_joblistFileHandler, i_gzip, i_debug)
         rmTmpFilesList.append(previousFilename)
         
-        previousFilename = filter_runSnpEff(i_id, i_chr, previousFilename, i_snpEffDir, i_snpEffGenome, i_snpEffCanonical, i_outputDir, i_prefix, i_joblistFileHandler, i_gzip, i_debug)
+        previousFilename = filter_runSnpEff(i_id, i_chr, previousFilename, i_snpEffDir, i_snpEffGenome, i_snpEffCanonical, i_outputDir, i_prefix, i_joblistFileHandler, i_debug)
         rmTmpFilesList.append(previousFilename)
         
         if (not i_dnaOnlyFlag and i_rnaBlacklistFlag):
