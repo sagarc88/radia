@@ -766,7 +766,7 @@ def filter_blat(aPythonExecutable, anId, aChromId, anInputFilename, aHeaderFilen
                 logging.critical("The FASTA file specified in the header does not exist: %s", aFastaFile, ". Specify a FASTA file for the RNA using the -f option.")
                 sys.exit(1) 
         
-    blatOutputFilename = filter_runBlat(anId, aChromId, aBlatInputFilename, aFastaFile, anOutputDir, aPrefix, aJobListFileHandler, anIsDebug)
+    blatOutputFilename = filter_runBlat(aChromId, aBlatInputFilename, aFastaFile, anOutputDir, aPrefix, aJobListFileHandler, anIsDebug)
         
     if (aGzipFlag):
         outputFilename = os.path.join(anOutputDir, aPrefix + "_blatFiltered_chr" + aChromId + ".vcf.gz")
