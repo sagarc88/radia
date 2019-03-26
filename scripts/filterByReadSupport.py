@@ -778,8 +778,13 @@ class Club():
                             totalRefReads += int(aCurrData.dnaTumorDict["AD"][refIndex])
                             totalAltReads += int(aCurrData.dnaTumorDict["AD"][altIndex])
                         if (aCurrData.rnaTumorDict != None):
-                            totalRefReads += int(aCurrData.rnaTumorDict["AD"][refIndex])
-                            totalAltReads += int(aCurrData.rnaTumorDict["AD"][altIndex])
+                            if (aCurrData.rnaTumorDict["AD"][refIndex] == "."):
+                                totalRefReads += 0
+                            elif(aCurrData.rnaTumorDict["AD"][altIndex] == "."):
+                                totalAltReads += 0
+                            else:
+                                totalRefReads += int(aCurrData.rnaTumorDict["AD"][refIndex])
+                                totalAltReads += int(aCurrData.rnaTumorDict["AD"][altIndex])
                         
                         totalCoverage = totalRefReads + totalAltReads
                         
@@ -818,8 +823,13 @@ class Club():
                             tumorRefReads += int(aCurrData.dnaTumorDict["AD"][refIndex])
                             tumorAltReads += int(aCurrData.dnaTumorDict["AD"][altIndex])
                         if (aCurrData.rnaTumorDict != None):
-                            tumorRefReads += int(aCurrData.rnaTumorDict["AD"][refIndex])
-                            tumorAltReads += int(aCurrData.rnaTumorDict["AD"][altIndex])
+                            if (aCurrData.rnaTumorDict["AD"][refIndex] == "."):              
+                                tumorRefReads += 0                                           
+                            elif(aCurrData.rnaTumorDict["AD"][altIndex] == "."):             
+                                tumorAltReads += 0                                           
+                            else:                                                            
+                                tumorRefReads += int(aCurrData.rnaTumorDict["AD"][refIndex]) 
+                                tumorAltReads += int(aCurrData.rnaTumorDict["AD"][altIndex]) 
                         
                         totalCoverage = normalRefReads + normalAltReads + tumorRefReads + tumorAltReads
                         
